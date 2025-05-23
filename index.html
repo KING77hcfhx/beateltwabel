@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عطاره بيت التوابل</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@450" />
+  <style>
+  	  * {
+    font-family: 'Markazi Text';
+    font-weight: 400;
+  }
+
+  @supports (font-variation-settings: "wght" 450) {
+    * {
+      font-family: 'Markazi Text';
+      font-weight: 450;
+    }
+  }
+    body {
+      margin: 0;
+      font-family: 'Markazi Text';
+      background: #fff;
+    }
+
+    .navbar {
+      background-color: #3d3d3d;
+      width: 60px;
+      padding: 1rem 0;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .navbar ul li {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .navbar ul li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.6rem;
+      padding: 0.75rem 0;
+      width: 90%;
+      transition: background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #0b8457;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    main {
+      margin-left: 60px;
+      padding: 10px;
+    }
+
+    .search-bar {
+      margin: 10px;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      max-width: 400px;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .slider-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 10px;
+      color: #ff6600;
+    }
+
+    .slider-container {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-card {
+      flex: 0 0 auto;
+      background-color: #f0f0f0;
+      border-radius: 12px;
+      padding: 10px;
+      width: 118px;
+      height: 174px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.1s ease;
+      scroll-snap-align: start;
+    }
+
+    .product-card:active {
+      transform: scale(0.97);
+    }
+
+    .image-container {
+      width: 105px;
+      height: 98px;
+      margin: 0 auto 8px;
+      border-radius: 10%;
+      overflow: hidden;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card h2 {
+      margin: 8px 0 4px;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .product-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .available, .available-2, .offern {
+      display: block;
+      margin-top: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+.offern {
+      color: brown;
+    }
+    
+    .available {
+      color: green;
+    }
+
+    .available-2 {
+      color: orange;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#offers">عروض</a></li>
+      <li><a href="#spices">التوابل</a></li>
+      <li><a href="#oils">الزيوت</a></li>
+      <li><a href="#herbs">الأعشاب</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+    </div>
+    <p id="noResults" style="text-align:center; color:red; display:none;">لا توجد نتائج</p>
+
+    <!-- عروض اليوم -->
+    <h2 class="slider-title" id="offers">عروض اليوم</h2>
+    <div class="slider-container">
+      <div class="product-card">
+        <div class="image-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-DA6rUYJAak1Qi_Z4KJReacLKIcwsAIuXh1s4g4_z4vsiuGCavP4bgw&s=10" alt="زبادي">
+        </div>
+        <h2>زبادي</h2>
+        <span class="offern">5 قطع ب20 جنيه</span>
+      </div>
+      <div class="product-card">
+        <div class="image-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6hripDjXRTSdPdg7e6QcQmewQHfihYVl2iwop4adnQLXdyj7Jmo6-utYD&s=10" alt="كمون">
+        </div>
+        <h2>كمون</h2>
+        <p><span class="price">250</span> جنيه</p>
+        <span class="offern">بدلاً من 260</span>
+      </div>
+    </div>
+
+<!-- قسم التوابل -->
+<h2 class="slider-title"id="spices">قسم التوابل</h2>
+<div class="slider-container">
+  <div class="product-card">
+    <div class="image-container">
+      <img src="pepper.jpg" alt="فلفل">
+    </div>
+    <h2>فلفل أسود</h2>
+    <p><span class="price">180</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="turmeric.jpg" alt="كركم">
+    </div>
+    <h2>كركم</h2>
+    <p><span class="price">200</span> جنيه</p>
+    <span class="available-2">متوفر بعد يومين</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="coriander.jpg" alt="كزبرة">
+    </div>
+    <h2>كزبرة</h2>
+    <p><span class="price">170</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="chili.jpg" alt="شطة">
+    </div>
+    <h2>شطة ناعمة</h2>
+    <p><span class="price">190</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="cumin.jpg" alt="كمون">
+    </div>
+    <h2>كمون</h2>
+    <p><span class="price">250</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+</div>
+
+<!-- قسم الزيوت -->
+<h2 class="slider-title" id="oils">قسم الزيوت</h2>
+<div class="slider-container">
+  <div class="product-card">
+    <div class="image-container">
+      <img src="olive-oil.jpg" alt="زيت زيتون">
+    </div>
+    <h2>زيت زيتون</h2>
+    <p><span class="price">300</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="black-seed-oil.jpg" alt="حبة البركة">
+    </div>
+    <h2>زيت حبة البركة</h2>
+    <p><span class="price">270</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="sesame-oil.jpg" alt="سمسم">
+    </div>
+    <h2>زيت السمسم</h2>
+    <p><span class="price">260</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="castor-oil.jpg" alt="خروع">
+    </div>
+    <h2>زيت خروع</h2>
+    <p><span class="price">230</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="almond-oil.jpg" alt="لوز">
+    </div>
+    <h2>زيت لوز</h2>
+    <p><span class="price">320</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+</div>
+
+<!-- قسم الأعشاب -->
+<h2 class="slider-title" id="herbs">قسم الأعشاب</h2>
+<div class="slider-container">
+  <div class="product-card">
+    <div class="image-container">
+      <img src="mint.jpg" alt="نعناع">
+    </div>
+    <h2>نعناع</h2>
+    <p><span class="price">90</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="chamomile.jpg" alt="بابونج">
+    </div>
+    <h2>بابونج</h2>
+    <p><span class="price">110</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="thyme.jpg" alt="زعتر">
+    </div>
+    <h2>زعتر</h2>
+    <p><span class="price">130</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="rosemary.jpg" alt="إكليل الجبل">
+    </div>
+    <h2>إكليل الجبل</h2>
+    <p><span class="price">125</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+  <div class="product-card">
+    <div class="image-container">
+      <img src="anise.jpg" alt="يانسون">
+    </div>
+    <h2>يانسون</h2>
+    <p><span class="price">95</span> جنيه</p>
+    <span class="available">متوفر</span>
+  </div>
+</div>
+
+  </main>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const noResults = document.getElementById('noResults');
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+    let anyVisible = false;
+
+    products.forEach(card => {
+      const title = card.querySelector('h2').textContent.toLowerCase();
+      if (title.includes(query)) {
+        card.style.display = 'block';
+        anyVisible = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // عرض أو إخفاء رسالة "لا توجد نتائج"
+    if (!anyVisible) {
+      noResults.style.display = 'block';
+    } else {
+      noResults.style.display = 'none';
+    }
+  });
+  document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+    });
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // منع الضغط المطول في الموبايل (اختياري)
+    document.addEventListener('touchstart', function(e) {
+      if (e.touches.length > 1) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+    });
+</script>
+</script>
+</body>
+</html>
